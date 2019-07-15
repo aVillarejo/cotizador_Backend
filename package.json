@@ -13,6 +13,9 @@
     "build": "yarn pre:build && babel server.js -o server-bundle.js && cd client && yarn build",
     "serve": "cross-env NODE_ENV=production node server-bundle.js"
   },
+  "engines": {
+    "node": "10.15.1"
+  }
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
