@@ -7,7 +7,8 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon --exec babel-node server.js",
-    "start": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start":"node server-bundle.js",
+    "dev": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "pre:build": "rm -rf server-bundle.js && cd client && rm -rf build/",
     "build": "yarn pre:build && babel server.js -o server-bundle.js && cd client && yarn build",
     "serve": "cross-env NODE_ENV=production node server-bundle.js"
