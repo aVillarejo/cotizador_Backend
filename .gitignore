@@ -2,9 +2,11 @@
 node_modules/
 client/
 
+
+#For Production
 # development-files
-# server.js
-# .babelrc
+server.js
+babelrc
 
 equipos.json
 # misc
