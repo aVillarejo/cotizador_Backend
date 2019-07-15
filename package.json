@@ -1,0 +1,27 @@
+{
+  "name": "Cotizador-WebApp",
+  "author": "Alberto Villarejo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon --exec babel-node server.js",
+    "start": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "pre:build": "rm -rf server-bundle.js && cd client && rm -rf build/",
+    "build": "yarn pre:build && babel server.js -o server-bundle.js && cd client && yarn build",
+    "serve": "cross-env NODE_ENV=production node server-bundle.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.4",
+    "morgan": "^1.9.1"
+  }
+}

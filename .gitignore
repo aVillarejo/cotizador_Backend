@@ -1,0 +1,11 @@
+# folders
+node_modules/
+client/
+
+# development-files
+# server.js
+# .babelrc
+
+equipos.json
+# misc
+yarn.lock
