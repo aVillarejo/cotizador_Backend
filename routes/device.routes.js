@@ -14,8 +14,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const device = await Device.findById(id);
   if (!device) throw new Error("Ha ocurrido un error");
-  // return res.send(task);
-  res.json({ task });
+  res.json({ device });
 });
 
 //Crear device
